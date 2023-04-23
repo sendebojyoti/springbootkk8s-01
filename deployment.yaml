@@ -2,15 +2,15 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-    app: hello-world-rest-api
-  name: hello-world-rest-api
+    app: springbootkk8s01
+  name: springbootkk8s01
   namespace: default
 spec:
   replicas: 1
   minReadySeconds: 45
   selector:
     matchLabels:
-      app: hello-world-rest-api
+      app: springbootkk8s01
   strategy:
     rollingUpdate:
       maxSurge: 25%
@@ -19,12 +19,12 @@ spec:
   template:
     metadata:
       labels:
-        app: hello-world-rest-api
+        app: springbootkk8s01
     spec:
       containers:
-      - image: sendebojyoti/hello-world-rest-api:0.0.1-SNAPSHOT
+      - image: sendebojyoti/springbootkk8s01:0.0.1-SNAPSHOT
         imagePullPolicy: IfNotPresent
-        name: hello-world-rest-api
+        name: springbootkk8s01
       restartPolicy: Always
       terminationGracePeriodSeconds: 30
 ---
@@ -32,8 +32,8 @@ apiVersion: v1
 kind: Service
 metadata:
   labels: #PODS
-    app: hello-world-rest-api
-  name: hello-world-rest-api
+    app: springbootkk8s01
+  name: springbootkk8s01
   namespace: default
 spec:
   ports:
@@ -42,6 +42,6 @@ spec:
     protocol: TCP
     targetPort: 8080
   selector:
-    app: hello-world-rest-api
+    app: springbootkk8s01
   sessionAffinity: None # ClientIP
   type: LoadBalancer

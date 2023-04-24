@@ -22,7 +22,7 @@ spec:
         app: sbk8s-pod
     spec:
       containers:
-      - image: sendebojyoti/springbootkk8s01:0.0.2-SNAPSHOT
+      - image: sendebojyoti/springbootkk8s01:0.0.3-SNAPSHOT
         imagePullPolicy: IfNotPresent
         ports:
           - containerPort: 8080

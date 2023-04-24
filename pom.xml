@@ -6,7 +6,7 @@
 
 	<groupId>com.sendebojyoti.rest.webservices</groupId>
 	<artifactId>springbootkk8s01</artifactId>
-	<version>0.0.2-SNAPSHOT</version>
+	<version>0.0.3-SNAPSHOT</version>
 	<packaging>jar</packaging>
 	<description>Demo project for Spring Boot - springbootkk8s01 + Ingress</description>
 	<name>springbootkk8s01</name>

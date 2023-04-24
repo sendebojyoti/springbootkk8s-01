@@ -2,15 +2,15 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-    app: springbootkk8s01
-  name: springbootkk8s01
+    app: sbk8s-dep
+  name: sbk8s-dep
   namespace: default
 spec:
   replicas: 1
   minReadySeconds: 45
   selector:
     matchLabels:
-      app: springbootkk8s01
+      app: sbk8s-pod
   strategy:
     rollingUpdate:
       maxSurge: 25%
@@ -19,12 +19,14 @@ spec:
   template:
     metadata:
       labels:
-        app: springbootkk8s01
+        app: sbk8s-pod
     spec:
       containers:
-      - image: sendebojyoti/springbootkk8s01:0.0.1-SNAPSHOT
+      - image: sendebojyoti/springbootkk8s01:0.0.2-SNAPSHOT
         imagePullPolicy: IfNotPresent
-        name: springbootkk8s01
+        ports:
+          - containerPort: 8080
+        name: sbk8s-con
       restartPolicy: Always
       terminationGracePeriodSeconds: 30
 ---
@@ -32,16 +34,14 @@ apiVersion: v1
 kind: Service
 metadata:
   labels: #PODS
-    app: springbootkk8s01
-  name: springbootkk8s01
+    app: sbk8s-svc
+  name: sbk8s-svc
   namespace: default
 spec:
-  ports:
-  - nodePort: 30703
-    port: 8080
-    protocol: TCP
-    targetPort: 8080
   selector:
-    app: springbootkk8s01
-  sessionAffinity: None # ClientIP
+    app: sbk8s-pod
+  sessionAffinity: None
+  ports:
+    - port: 8080
+      targetPort: 8080
   type: LoadBalancer

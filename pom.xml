@@ -8,7 +8,7 @@
 	<artifactId>springbootkk8s01</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
-	<description>Demo project for Spring Boot - springbootkk8s01</description>
+	<description>Demo project for Spring Boot - V1</description>
 	<name>springbootkk8s01</name>
 	<parent>
 		<groupId>org.springframework.boot</groupId>
@@ -22,7 +22,6 @@
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<java.version>1.8</java.version>
 		<maven-jar-plugin.version>3.1.1</maven-jar-plugin.version>
-		<!-- Needed by io.fabric8 docker-maven-plugin -->
 		<jar>${project.build.directory}/${project.build.finalName}.jar</jar>
 	</properties>
 
@@ -35,8 +34,7 @@
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-devtools</artifactId>
-			<scope>runtime</scope>
+			<artifactId>spring-boot-starter-actuator</artifactId>
 		</dependency>
 
 		<dependency>

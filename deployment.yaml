@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   labels:
     app: hello-world-rest-api
-    version: v1
+    version: v2
   name: hello-world-rest-api
   namespace: default
 spec:
@@ -23,7 +23,7 @@ spec:
         app: hello-world-rest-api
     spec:
       containers:
-      - image: sendebojyoti/hello-world-rest-api:0.0.1-SNAPSHOT
+      - image: sendebojyoti/hello-world-rest-api:0.0.2-SNAPSHOT
         imagePullPolicy: IfNotPresent
         name: hello-world-rest-api
       restartPolicy: Always
@@ -44,6 +44,6 @@ spec:
     targetPort: 8080
   selector:
     app: hello-world-rest-api
-    version: v1
+    version: v2
   sessionAffinity: None
   type: LoadBalancer

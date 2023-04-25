@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels: #PODS
+    app: hello-world-restapi-svc-v2
+  name: sbk8s-svc-v2
+  namespace: default
+spec:
+  selector:
+    app: hello-world-restapi-pod-v2
+  sessionAffinity: None
+  ports:
+    - port: 8080
+      targetPort: 8080
+  type: LoadBalancer

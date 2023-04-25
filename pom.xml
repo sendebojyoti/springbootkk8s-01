@@ -5,11 +5,11 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.sendebojyoti.rest.webservices</groupId>
-	<artifactId>springbootkk8s01</artifactId>
+	<artifactId>hello-world-rest-api</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 	<description>Demo project for Spring Boot - V1</description>
-	<name>springbootkk8s01</name>
+	<name>hello-world-rest-api</name>
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
@@ -45,7 +45,7 @@
 	</dependencies>
 
 	<build>
-		<finalName>springbootkk8s01</finalName>
+		<finalName>hello-world-rest-api</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>

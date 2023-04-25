@@ -23,7 +23,7 @@ spec:
         app: hello-world-rest-api
     spec:
       containers:
-      - image: sendebojyoti/springbootkk8s01:0.0.1-SNAPSHOT
+      - image: sendebojyoti/hello-world-rest-api:0.0.1-SNAPSHOT
         imagePullPolicy: IfNotPresent
         name: hello-world-rest-api
       restartPolicy: Always

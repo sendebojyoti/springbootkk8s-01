@@ -3,8 +3,8 @@ kind: Deployment
 metadata:
   labels:
     app: hello-world-rest-api
-    version: v3
-  name: hello-world-rest-api
+    version: v1
+  name: hello-world-rest-api-v3
   namespace: default
 spec:
   replicas: 1
@@ -23,8 +23,8 @@ spec:
         app: hello-world-rest-api
     spec:
       containers:
-      - image: sendebojyoti/hello-world-rest-api:0.0.3-SNAPSHOT
-        imagePullPolicy: IfNotPresent
-        name: hello-world-rest-api
+        - image: sendebojyoti/hello-world-rest-api:0.0.3-SNAPSHOT
+          imagePullPolicy: IfNotPresent
+          name: hello-world-rest-api
       restartPolicy: Always
       terminationGracePeriodSeconds: 30

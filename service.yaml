@@ -2,8 +2,8 @@ apiVersion: v1
 kind: Service
 metadata:
   labels:
-    app: hello-world-rest-api
-  name: hello-world-rest-api
+    app: hello-world-rest-api-ingress
+  name: hello-world-rest-api-ingress
   namespace: default
 spec:
   ports:

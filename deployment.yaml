@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   labels:
     app: hello-world-rest-api
-    version: v1
+    version: v3
   name: hello-world-rest-api-v3
   namespace: default
 spec:

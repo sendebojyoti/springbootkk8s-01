@@ -1,13 +1,17 @@
-ACCOUNT=$(gcloud info --format='value(config.account)')
-kubectl create clusterrolebinding owner-cluster-admin-binding \
---clusterrole cluster-admin \
---user $ACCOUNT
-
-git clone https://github.com/scriptcamp/nginx-ingress-controller.git
-
-
-kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v1.1.1/deploy/static/provider/cloud/deploy.yaml
-
-kubectl create ns ingress-nginx 
-
-follow the files in ingressCtrlDir
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: hello-world-rest-api-ingress
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+spec:
+  rules:
+    - http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: hello-world-rest-api
+                port:
+                  number: 8080

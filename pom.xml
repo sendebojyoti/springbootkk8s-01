@@ -6,9 +6,9 @@
 
 	<groupId>com.sendebojyoti.rest.webservices</groupId>
 	<artifactId>hello-world-rest-api</artifactId>
-	<version>0.0.2-SNAPSHOT</version>
+	<version>0.0.3-SNAPSHOT</version>
 	<packaging>jar</packaging>
-	<description>Demo project for Spring Boot - V1</description>
+	<description>Demo project for Spring Boot - V4</description>
 	<name>hello-world-rest-api</name>
 	<parent>
 		<groupId>org.springframework.boot</groupId>

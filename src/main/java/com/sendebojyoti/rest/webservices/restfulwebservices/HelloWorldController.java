@@ -14,22 +14,24 @@ public class HelloWorldController {
 
     @GetMapping(path = "/")
     public String imUpAndRunning() {
-        return "{healthy:true}";
+        return "{healthy:true" + "\\r\\n" +
+                "gateway:Istio-ingress" +
+                "}";
     }
 
 
     @GetMapping(path = "/hello-world")
     public String helloWorld() {
-        return "Hello World " + " V1 " + service.retrieveInstanceInfo();
+        return "Hello World " + " V4 " + service.retrieveInstanceInfo();
     }
 
     @GetMapping(path = "/hello-world-bean")
     public HelloWorldBean helloWorldBean() {
-        return new HelloWorldBean("Hello World");
+        return new HelloWorldBean("Hello World V4");
     }
 
     @GetMapping(path = "/hello-world/path-variable/{name}")
     public HelloWorldBean helloWorldPathVariable(@PathVariable String name) {
-        return new HelloWorldBean(String.format("Hello World, %s", name));
+        return new HelloWorldBean(String.format("Hello World V4, %s", name));
     }
 }
